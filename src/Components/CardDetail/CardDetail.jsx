@@ -1,11 +1,27 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 
 const CardDetail = () => {
   const cards = useLoaderData();
-  console.log(cards);
+  const { id } = useParams();
+  const card = cards.find(card => card._id === id);
+  console.log(card);
+  // console.log(cards);
+  const { food_image, food_name } = card;
   return (
-    <div>
-      <h1>Hi</h1>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row">
+        <img src={food_image} className="max-w-sm rounded-lg shadow-2xl" />
+        <div>
+          <h1 className="text-5xl font-bold">
+            Food Name: <br /> {food_name}
+          </h1>
+          <Link to="/">
+            <button className="mt-10 btn btn-outline btn-secondary">
+              Back To Home
+            </button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

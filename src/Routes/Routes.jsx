@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       {
         path: '/Card/:id',
         element: <CardDetail></CardDetail>,
-        loader: () => fetch('..fake.json'),
+        loader: () => fetch('http://localhost:5000/foods'),
       },
     ],
   },

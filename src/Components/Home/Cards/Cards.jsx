@@ -4,7 +4,7 @@ import Card from '../../Card/Card';
 const Cards = () => {
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    fetch('fake.json')
+    fetch('http://localhost:5000/foods')
       .then(res => res.json())
       .then(data => setCards(data));
   }, []);

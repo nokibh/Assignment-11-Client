@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
 const Card = ({ card }) => {
-  console.log(card);
-  const { id, food_image, food_name, food_category, price, quantity } = card;
+  // console.log(card);
+  const { _id, food_image, food_name, food_category, price, quantity } = card;
   return (
-    <div className="card w-80 bg-base-100 shadow-xl">
+    <div className="card w-80 bg-base-100 shadow-xl animate__animated animate__shakeX">
       <figure className="px-10 pt-10">
         <img
           src={food_image}
@@ -18,8 +18,8 @@ const Card = ({ card }) => {
         <p className="font-bold">{food_category}</p>
         <p className="font-bold">Quantity : {quantity}</p>
         <div className="card-actions justify-end">
-          <Link to={`/Card/${id}`}>
-            <button className="btn bg-[#8e0abe3e]">View Property</button>
+          <Link to={`/Card/${_id}`}>
+            <button className="btn btn-outline btn-secondary">Detail</button>
           </Link>
         </div>
       </div>

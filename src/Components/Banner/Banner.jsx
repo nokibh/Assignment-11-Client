@@ -1,3 +1,4 @@
+import 'animate.css';
 const Banner = () => {
   return (
     <div>
@@ -9,7 +10,7 @@ const Banner = () => {
           />
           <div className="absolute h-full left-0 top-0 flex items-center   pl-12 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="space-y-7">
-              <h2 className="text-6xl font-bold text-white">
+              <h2 className="text-6xl font-bold text-white animate__animated animate__flipInX">
                 Delicious Bites Cafe
               </h2>
 
@@ -43,7 +44,7 @@ const Banner = () => {
           />
           <div className="absolute h-full left-0 top-0 flex items-center   pl-12 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="space-y-7">
-              <h2 className="text-6xl font-bold text-white">
+              <h2 className="text-6xl font-bold text-white animate__animated animate__flipInX">
                 Delicious Bites Cafe
               </h2>
 
@@ -77,7 +78,7 @@ const Banner = () => {
           />
           <div className="absolute h-full left-0 top-0 flex items-center   pl-12 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="space-y-7">
-              <h2 className="text-6xl font-bold text-white">
+              <h2 className="text-6xl font-bold text-white animate__animated animate__flipInX">
                 Delicious Bites Cafe
               </h2>
 
@@ -109,7 +110,7 @@ const Banner = () => {
           />{' '}
           <div className="absolute h-full left-0 top-0 flex items-center   pl-12 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="space-y-7">
-              <h2 className="text-6xl font-bold text-white">
+              <h2 className="text-6xl font-bold text-white animate__animated animate__flipInXn">
                 Delicious Bites Cafe
               </h2>
 
