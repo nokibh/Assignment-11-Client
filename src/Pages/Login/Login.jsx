@@ -141,19 +141,23 @@ const Login = () => {
                 onClick={handleGoogleLogin}
                 className="mb-4 text-center justify-center w-full bg-[#dd4b39] hover:bg-blue-600 text-white font-bold py- px-4  rounded h-10 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"
               >
-                <div>
-                  <FaGoogle />
+                <div className="lg:flex items-center text-center gap-3 m-auto lg:ml-12 lg:px-4 ">
+                  <i>
+                    <FaGoogle />
+                  </i>
+                  <p> Continue with Google</p>
                 </div>
-                Continue with Google
               </button>
               <button
                 onClick={handleGithubLogin}
                 className="mb-4 w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 hover:bg-blue-500 text-white font-bold py- px-4 rounded "
               >
-                <span>
-                  <FaGithub />{' '}
-                </span>
-                Continue with Github
+                <div className="lg:flex items-center text-center gap-3 m-auto lg:ml-12 lg:px-4 p-2">
+                  <span>
+                    <FaGithub />{' '}
+                  </span>
+                  Continue with Github
+                </div>
               </button>
             </div>
           </div>
