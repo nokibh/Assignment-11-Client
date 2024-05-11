@@ -8,11 +8,11 @@ const CardDetail = () => {
   // console.log(cards);
   const { food_image, food_name } = card;
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200 mb-5 mt-5 rounded-lg">
       <div className="hero-content flex-col lg:flex-row">
         <img src={food_image} className="max-w-sm rounded-lg shadow-2xl" />
         <div>
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-5xl font-bold animate__animated  animate__jackInTheBox">
             Food Name: <br /> {food_name}
           </h1>
           <Link to="/">
