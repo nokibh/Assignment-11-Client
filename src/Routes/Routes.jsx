@@ -4,6 +4,7 @@ import Home from '../Components/Home/Home';
 import CardDetail from '../Components/CardDetail/CardDetail';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
+import AllFoods from '../Components/AllFoods/AllFoods';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,10 @@ const router = createBrowserRouter([
         path: 'register',
         element: <Register></Register>,
       },
-
+      {
+        path: '/allFoods',
+        element: <AllFoods></AllFoods>,
+      },
       {
         path: '/Card/:id',
         element: <CardDetail></CardDetail>,

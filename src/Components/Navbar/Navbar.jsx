@@ -55,18 +55,18 @@ const Navbar = () => {
               >
                 <li>
                   <Link to="/add-job" className="justify-between">
-                    Add Job
+                    Add Food
                   </Link>
                 </li>
                 <li>
-                  <Link to="/my-posted-jobs">My Posted Jobs</Link>
+                  <Link to="/my-posted-jobs">My Add Food</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/my-bids">My Bids</Link>
                 </li>
                 <li>
                   <Link to="/bid-requests">Bid Requests</Link>
-                </li>
+                </li> */}
                 <li className="mt-2">
                   <button
                     onClick={logOut}
