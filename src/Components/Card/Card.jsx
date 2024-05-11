@@ -1,22 +1,26 @@
+import { Link } from 'react-router-dom';
+
 const Card = ({ card }) => {
   console.log(card);
-  const { food_image, food_name, food_category, price, quantity } = card;
+  const { id, food_image, food_name, food_category, price, quantity } = card;
   return (
     <div className="card w-80 bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
         <img
           src={food_image}
           alt="Shoes"
-          className="rounded-xl border-5 border-red-500"
+          className="rounded-xl h-44 w-48 border-5 border-red-500"
         />
       </figure>
       <div className="card-body ml-5">
         <h2 className="card-title font-bold">Food Name:{food_name}</h2>
-        <p>${price}</p>
-        <p>{food_category}</p>
-        <p>{quantity}</p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+        <p className="font-bold">${price}</p>
+        <p className="font-bold">{food_category}</p>
+        <p className="font-bold">Quantity : {quantity}</p>
+        <div className="card-actions justify-end">
+          <Link to={`/Card/${id}`}>
+            <button className="btn bg-[#8e0abe3e]">View Property</button>
+          </Link>
         </div>
       </div>
     </div>

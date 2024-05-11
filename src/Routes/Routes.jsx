@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Main/Main';
 import Home from '../Components/Home/Home';
+import CardDetail from '../Components/CardDetail/CardDetail';
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+      },
+      {
+        path: '/Card/:id',
+        element: <CardDetail></CardDetail>,
+        loader: () => fetch('..fake.json'),
       },
     ],
   },
