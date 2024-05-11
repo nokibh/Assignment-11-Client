@@ -1,7 +1,9 @@
+import Cards from './Cards/Cards';
+
 const Home = () => {
   return (
     <div>
-      <h3>This is Home</h3>
+      <Cards></Cards>
     </div>
   );
 };
