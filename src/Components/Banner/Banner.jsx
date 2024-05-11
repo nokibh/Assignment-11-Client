@@ -1,4 +1,5 @@
 import 'animate.css';
+import { Link } from 'react-router-dom';
 const Banner = () => {
   return (
     <div>
@@ -21,9 +22,11 @@ const Banner = () => {
               </p>
               <div>
                 <div>
-                  <button className="btn btn-outline btn-secondary">
-                    Explore All Foods
-                  </button>
+                  <Link to="/allFoods">
+                    <button className="btn btn-outline btn-secondary">
+                      Explore All Foods
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -55,9 +58,11 @@ const Banner = () => {
               </p>
               <div>
                 <div>
-                  <button className="btn btn-outline btn-secondary">
-                    Explore All Foods
-                  </button>
+                  <Link to="/allFoods">
+                    <button className="btn btn-outline btn-secondary">
+                      Explore All Foods
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -88,9 +93,11 @@ const Banner = () => {
                 Nestled in the heart
               </p>
               <div>
-                <button className="btn btn-outline btn-secondary">
-                  Explore All Foods
-                </button>
+                <Link to="/allFoods">
+                  <button className="btn btn-outline btn-secondary">
+                    Explore All Foods
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -120,9 +127,11 @@ const Banner = () => {
               </p>
               <div>
                 <div>
-                  <button className="btn btn-outline btn-secondary">
-                    Explore All Foods
-                  </button>
+                  <Link to="/allFoods">
+                    <button className="btn btn-outline btn-secondary">
+                      Explore All Foods
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
