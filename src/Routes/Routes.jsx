@@ -5,11 +5,13 @@ import CardDetail from '../Components/CardDetail/CardDetail';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import AllFoods from '../Components/AllFoods/AllFoods';
+import ErrorPage from '../Components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
