@@ -67,6 +67,9 @@ const Login = () => {
             </div>
 
             <div className="p-8">
+              <div className="font-bold">
+                <h2>Login Now!!</h2>
+              </div>
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="mt-8 space-y-6"
