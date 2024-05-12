@@ -7,6 +7,7 @@ import Register from '../Pages/Register/Register';
 import AllFoods from '../Components/AllFoods/AllFoods';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import PrivateRoute from '../Components/PrivateRoute/PrivateRoute';
+import TopFoodDetail from '../Components/TopFoodDetail/TopFoodDetail';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch('http://localhost:5000/foods'),
+      },
+      {
+        path: '/Top/:id',
+        element: <TopFoodDetail></TopFoodDetail>,
+
+        loader: () => fetch('http://localhost:5000/tops'),
       },
     ],
   },
