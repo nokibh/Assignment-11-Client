@@ -6,6 +6,7 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import AllFoods from '../Components/AllFoods/AllFoods';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
+import PrivateRoute from '../Components/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/Card/:id',
-        element: <CardDetail></CardDetail>,
+        element: (
+          <PrivateRoute>
+            {' '}
+            <CardDetail></CardDetail>
+          </PrivateRoute>
+        ),
         loader: () => fetch('http://localhost:5000/foods'),
       },
     ],
