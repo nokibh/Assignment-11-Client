@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 
 const ViewMyList = ({ item }) => {
   console.log(item);
-  const { _id, name, spot } = item;
+  const { _id, food_name, category } = item;
   const handleDelete = _id => {
     console.log(_id);
     Swal.fire({
@@ -41,7 +41,7 @@ const ViewMyList = ({ item }) => {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Country</th>
+              <th>Category</th>
 
               <th>Btn</th>
               <th>BTn</th>
@@ -50,8 +50,8 @@ const ViewMyList = ({ item }) => {
           <tbody>
             {/* row 1 */}
             <tr className="bg-base-200">
-              <td>{name}</td>
-              <td>{spot}</td>
+              <td>{food_name}</td>
+              <td>{category}</td>
 
               <th>
                 <Link to={`/updateFood/${_id}`}>

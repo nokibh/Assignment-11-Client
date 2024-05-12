@@ -13,6 +13,7 @@ const AddFood = () => {
     const description = form.description.value;
     const food_image = form.food_image.value;
     const food_qun = form.food_qun.value;
+    const price = form.price.value;
 
     const email = user.email;
     const addAll = {
@@ -20,7 +21,7 @@ const AddFood = () => {
 
       food_qun,
       category,
-
+      price,
       description,
       email,
       food_image,
@@ -39,7 +40,7 @@ const AddFood = () => {
         if (data?.insertedId) {
           Swal.fire({
             title: 'Success!',
-            text: 'Tourist  added Successfully',
+            text: '  Added  Food Successfully',
             icon: 'success',
             confirmButtonText: 'Cool',
           });
@@ -136,7 +137,7 @@ const AddFood = () => {
                   Price
                 </label>
                 <input
-                  name="session"
+                  name="price"
                   id="brand"
                   className="w-full p-2 border rounded-md focus:outline-[#5849ffb8]"
                   type="text"
@@ -148,7 +149,7 @@ const AddFood = () => {
             <input
               className="px-4 w-full py-2 mt-4 rounded hover:bg-[#6a49ffca]  bg-[#49dbff9f] duration-200 text-white cursor-pointer font-semibold"
               type="submit"
-              value="Add Tourist Spot"
+              value="Add Food Item"
             />
           </form>
         </div>
