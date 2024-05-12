@@ -8,6 +8,9 @@ import AllFoods from '../Components/AllFoods/AllFoods';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import PrivateRoute from '../Components/PrivateRoute/PrivateRoute';
 import TopFoodDetail from '../Components/TopFoodDetail/TopFoodDetail';
+import AddFood from '../Components/AddFood/AddFood';
+import MyAddFood from '../Components/MyAddFood/MyAddFood';
+import Update from '../Components/Update/Update';
 
 const router = createBrowserRouter([
   {
@@ -44,9 +47,37 @@ const router = createBrowserRouter([
       },
       {
         path: '/Top/:id',
-        element: <TopFoodDetail></TopFoodDetail>,
+        element: (
+          <PrivateRoute>
+            <TopFoodDetail></TopFoodDetail>
+          </PrivateRoute>
+        ),
 
         loader: () => fetch('http://localhost:5000/tops'),
+      },
+      {
+        path: 'addFood',
+        element: (
+          <PrivateRoute>
+            {' '}
+            <AddFood></AddFood>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'myFood',
+        element: (
+          <PrivateRoute>
+            {' '}
+            <MyAddFood></MyAddFood>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'updateFood/:id',
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5173/myFood/${params.id}`),
       },
     ],
   },

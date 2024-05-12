@@ -1,19 +1,10 @@
 import { Link, useLoaderData, useParams } from 'react-router-dom';
-import TopBanner from '../TopBanner/TopBanner';
 
 const TopFoodDetail = () => {
   const cards = useLoaderData();
   const { id } = useParams();
   const card = cards.find(card => card._id === id);
-  const {
-    food_category,
-    made_by,
-    food_origin,
-    price,
-    short_description,
-    food_image,
-    food_name,
-  } = card;
+  const { short_description, food_image, food_name } = card;
   console.log(card);
   return (
     <div>
