@@ -6,17 +6,18 @@ const Update = () => {
   const { user } = UseHooks();
   const list = useLoaderData();
   const {
+    _id,
     food_name,
 
     food_qun,
     category,
     price,
     description,
-    email,
+
     food_image,
   } = list;
   // const { id } = useParams(); const { user } = UseHooks();
-  const handleAddUser = e => {
+  const handleUpdate = e => {
     e.preventDefault();
 
     const form = e.target;
@@ -33,14 +34,14 @@ const Update = () => {
 
       food_qun,
       category,
-
+      price,
       description,
       email,
       food_image,
     };
     console.log(addAll);
-    fetch('http://localhost:5000/tops', {
-      method: 'POST',
+    fetch(`http://localhost:5000/tops/${_id}`, {
+      method: 'PUT',
       headers: {
         'content-type': 'application/json',
       },
@@ -49,10 +50,10 @@ const Update = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if (data?.insertedId) {
+        if (data?.modifiedCount > 0) {
           Swal.fire({
             title: 'Success!',
-            text: 'Food  added Successfully',
+            text: 'Food  Updated Successfully',
             icon: 'success',
             confirmButtonText: 'Cool',
           });
@@ -76,7 +77,7 @@ const Update = () => {
           </p>
         </div>
         {/* form */}
-        <form onSubmit={handleAddUser}>
+        <form onSubmit={handleUpdate}>
           <div className="flex gap-8 ">
             <div className="flex-1">
               <label className="block mb-2 dark:text-white" htmlFor="image">
