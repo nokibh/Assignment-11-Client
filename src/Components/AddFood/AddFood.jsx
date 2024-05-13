@@ -10,7 +10,7 @@ const AddFood = () => {
     const food_name = form.food_name.value;
     const category = form.category.value;
 
-    const description = form.description.value;
+    const short_description = form.short_description.value;
     const food_image = form.food_image.value;
     const food_qun = form.food_qun.value;
     const price = form.price.value;
@@ -22,7 +22,8 @@ const AddFood = () => {
       food_qun,
       category,
       price,
-      description,
+      short_description,
+
       email,
       food_image,
     };
@@ -103,7 +104,7 @@ const AddFood = () => {
                   type="text"
                   placeholder="Description"
                   id="Price"
-                  name="description"
+                  name="short_description"
                 />
               </div>
 
