@@ -64,7 +64,7 @@ const Update = () => {
   console.log(list);
   return (
     <div className="gadgetContainer pt-10 mb-5 mt-5">
-      <div className="shadow-lg p-5 border rounded-lg pl-12 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+      <div className="shadow-lg p-5 border rounded-lg pl-12 bg-gradient-to-r from-[#151515c9] to-[rgba(21, 21, 21)]">
         {/* Heading */}
         <div className="mt-5 mb-8">
           <p className="text-center text-3xl font-semibold">
