@@ -23,7 +23,11 @@ const TopFood = ({ card }) => {
                 View Item
               </button>
             </Link>
-            <button className="btn btn-outline btn-secondary">Purchase</button>
+            <Link to={`/purchase/${_id}`}>
+              <button className="btn btn-outline btn-secondary">
+                Purchase
+              </button>
+            </Link>
           </div>
         </div>
       </div>

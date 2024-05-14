@@ -13,7 +13,7 @@ import MyAddFood from '../Components/MyAddFood/MyAddFood';
 import Update from '../Components/Update/Update';
 import MyOrder from '../Components/MyOrder/MyOrder';
 import Gallery from '../Components/Gallery/Gallery';
-
+import Purchase from '../Components/Purchase/Purchase';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -87,6 +87,16 @@ const router = createBrowserRouter([
       {
         path: '/gallery',
         element: <Gallery></Gallery>,
+      },
+      {
+        path: '/purchase/:id',
+        element: (
+          <PrivateRoute>
+            <Purchase></Purchase>
+          </PrivateRoute>
+        ),
+
+        loader: () => fetch('http://localhost:5000/tops'),
       },
     ],
   },
