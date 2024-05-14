@@ -14,6 +14,7 @@ import Update from '../Components/Update/Update';
 import MyOrder from '../Components/MyOrder/MyOrder';
 import Gallery from '../Components/Gallery/Gallery';
 import Purchase from '../Components/Purchase/Purchase';
+import PurRequest from '../Components/PurRequest/PurRequest';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>,
+      },
+      {
+        path: '/request',
+        element: <PurRequest></PurRequest>,
       },
 
       {

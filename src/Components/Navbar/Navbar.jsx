@@ -35,7 +35,7 @@ const Navbar = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? 'text-[#ac59d2] border border-[#22be0a4e] p-2 rounded'
+                    ? 'text-[#ac59d2] border border-[#0a49be28] p-2 rounded'
                     : 'font-bold'
                 }
               >
@@ -47,7 +47,7 @@ const Navbar = () => {
                 to="/allFoods"
                 className={({ isActive }) =>
                   isActive
-                    ? 'text-[#ac59d2] border border-[#22be0a4e] p-2 rounded'
+                    ? 'text-[#ac59d2] border border-[#0a49be28] p-2 rounded'
                     : 'font-bold'
                 }
               >
@@ -59,7 +59,7 @@ const Navbar = () => {
                 to="/gallery"
                 className={({ isActive }) =>
                   isActive
-                    ? 'text-[#ac59d2] border border-[#22be0a4e] p-2 rounded'
+                    ? 'text-[#ac59d2] border border-[#0a49be28] p-2 rounded'
                     : 'font-bold'
                 }
               >
@@ -132,6 +132,9 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link to="/order">My ordered food</Link>
+                </li>
+                <li>
+                  <Link to="/request">Purchase Request</Link>
                 </li>
 
                 <li className="mt-2">
