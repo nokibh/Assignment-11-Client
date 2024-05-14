@@ -12,7 +12,7 @@ const TopBanner = () => {
               Delicious Bites Cafe
             </h2>
 
-            <p className="text-white font-bold text-3xl">Our Top Food Corner</p>
+            <p className="text-white font-bold text-3xl">Our Food Gallery</p>
           </div>
         </div>
       </div>

@@ -110,7 +110,7 @@ const Purchase = () => {
                     </label>
                     <input
                       className="w-full p-2 border rounded-md focus:outline-[#494fffbd]"
-                      type="text"
+                      type="date"
                       placeholder="Time"
                       id="Price"
                       name="time"
