@@ -1,16 +1,15 @@
 const Photo = ({ card }) => {
-  const { food_image } = card;
+  const { food_image, food_name } = card;
   return (
     <div>
-      <div class="mb-4">
-        <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-          <img
-            className="w-96 h-56 rounded-lg"
-            src={food_image}
-            class="max-w-xs"
-            alt="Louvre"
-          />
-          <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-indigo-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-50"></div>
+      <div className="relative group w-full h-52">
+        <img
+          src={food_image}
+          alt="Sample"
+          className="w-full   h-52 rounded-lg object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+          <span className="text-white text-xl">{food_name}</span>
         </div>
       </div>
     </div>

@@ -1,10 +1,26 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [theme, setTheme] = useState('light');
+  const handleLogOut = () => {
+    Swal.fire({
+      title: 'Are you sure you want to log out?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, log me out!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        // Proceed with logout if confirmed
+        logOut();
+      }
+    });
+  };
   useEffect(() => {
     localStorage.setItem('theme', theme);
     const localTheme = localStorage.getItem('theme');
@@ -19,16 +35,20 @@ const Navbar = () => {
   };
   return (
     <div>
-      <div className="navbar  shadow-2xl container px-4 mx-auto bg-orange-300">
+      <div className="navbar  shadow-2xl container px-4 mx-auto bg-orange-300 rounded-lg">
         <div className="flex-1">
           <Link to="/" className="flex gap-2 items-center">
-            <img className="w-auto h-7" src="" alt="" />
+            <img
+              className="w-auto h-7 rounded-full"
+              src="https://i.ibb.co/S54TwVY/images-9-removebg-preview.png"
+              alt=""
+            />
             <span className="font-bold hover:bg-orange-100 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-30">
               Delicious Bites Cafe
             </span>
           </Link>
         </div>
-        <div className="flex-none">
+        <div className="flex-none items-center">
           <ul className="menu menu-horizontal px-1">
             <li>
               <NavLink
@@ -78,7 +98,7 @@ const Navbar = () => {
 
                 {/* sun icon */}
                 <svg
-                  className="swap-off fill-current w-10 h-10"
+                  className="swap-off fill-current w-10 h-5"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -87,7 +107,7 @@ const Navbar = () => {
 
                 {/* moon icon */}
                 <svg
-                  className="swap-on fill-current w-10 h-10"
+                  className="swap-on fill-current w-10 h-5"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -139,7 +159,7 @@ const Navbar = () => {
 
                 <li className="mt-2">
                   <button
-                    onClick={logOut}
+                    onClick={handleLogOut}
                     className="bg-gray-200 block text-center"
                   >
                     Logout

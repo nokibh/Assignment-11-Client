@@ -1,8 +1,10 @@
 import Swal from 'sweetalert2';
 import UseHooks from '../Hook/UseHooks';
+import { useLocation } from 'react-router-dom';
 
 const AddFood = () => {
   const { user } = UseHooks();
+  const navigate = useLocation();
   const handleAddUser = e => {
     e.preventDefault();
 
@@ -45,6 +47,7 @@ const AddFood = () => {
             icon: 'success',
             confirmButtonText: 'Cool',
           });
+          navigate('/');
           form.reset();
         }
       });

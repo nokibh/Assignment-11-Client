@@ -1,5 +1,5 @@
 const ViewPur = ({ card }) => {
-  const { price, _id, food_name, time } = card;
+  const { price, food_name, time } = card;
 
   return (
     <div>

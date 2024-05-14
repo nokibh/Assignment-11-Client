@@ -4,7 +4,7 @@ const Footer = () => {
       <aside>
         <img
           className="w-32 rounded-xl"
-          src="https://i.ibb.co/yFXMSXY/images-9.jpg"
+          src="https://i.ibb.co/S54TwVY/images-9-removebg-preview.png"
           alt=""
         />
         <p className="font-semibold">

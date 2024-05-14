@@ -61,7 +61,7 @@ const Purchase = () => {
   return (
     <div className="">
       <div className=" mb-5 mt-5 grid lg:grid-cols-2 items-center">
-        <div className="w-96 ">
+        <div className="w-96 pt-10">
           <div className="card card-side bg-base-100 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">Food Name : {food_name}</h2>
