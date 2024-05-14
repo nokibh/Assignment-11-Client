@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import TopFood from '../TopFood/TopFood';
+import { Link } from 'react-router-dom';
 
 const TopFoods = () => {
   const [cards, setCards] = useState([]);
@@ -18,6 +19,13 @@ const TopFoods = () => {
         {cards.map(card => (
           <TopFood key={card._id} card={card}></TopFood>
         ))}
+      </div>
+      <div className="text-center">
+        <Link to="/allFoods">
+          <button className="btn btn-wide btn-outline btn-secondary">
+            See All Foods
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -11,6 +11,8 @@ import TopFoodDetail from '../Components/TopFoodDetail/TopFoodDetail';
 import AddFood from '../Components/AddFood/AddFood';
 import MyAddFood from '../Components/MyAddFood/MyAddFood';
 import Update from '../Components/Update/Update';
+import MyOrder from '../Components/MyOrder/MyOrder';
+import Gallery from '../Components/Gallery/Gallery';
 
 const router = createBrowserRouter([
   {
@@ -68,7 +70,6 @@ const router = createBrowserRouter([
         path: 'myFood',
         element: (
           <PrivateRoute>
-            {' '}
             <MyAddFood></MyAddFood>
           </PrivateRoute>
         ),
@@ -78,6 +79,14 @@ const router = createBrowserRouter([
         element: <Update></Update>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/tops/${params.id}`),
+      },
+      {
+        path: '/order',
+        element: <MyOrder></MyOrder>,
+      },
+      {
+        path: '/gallery',
+        element: <Gallery></Gallery>,
       },
     ],
   },

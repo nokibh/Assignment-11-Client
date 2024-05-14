@@ -7,7 +7,7 @@ const Main = () => {
   const loc = useLocation();
   useEffect(() => {
     if (loc.pathname === '/') {
-      document.title = `Next - HOME`;
+      document.title = `D-Cafe - HOME`;
     } else {
       document.title = `D-Cafe ${loc.pathname.replace('/', '-')}`;
     }

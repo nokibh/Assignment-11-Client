@@ -16,7 +16,7 @@ const Update = () => {
 
     food_image,
   } = list;
-  // const { id } = useParams(); const { user } = UseHooks();
+
   const handleUpdate = e => {
     e.preventDefault();
 
