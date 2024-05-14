@@ -1,12 +1,14 @@
 import { useLoaderData, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import UseHooks from '../Hook/UseHooks';
 
 const Purchase = () => {
   const cards = useLoaderData();
   const { id } = useParams();
   const card = cards.find(card => card._id === id);
   console.log(card);
+  const { user } = UseHooks();
   const {
-    food_image,
     food_name,
 
     email,
@@ -14,19 +16,51 @@ const Purchase = () => {
     price,
     short_description,
   } = card;
-  return (
-    <div>
-      <div className="lg:flex mb-5 mt-5">
-        <div className="w-">
-          <div className="card card-side bg-base-100 shadow-xl">
-            <figure className="px-10 p-2 rounded-xl pt-10">
-              <img
-                src={food_image}
-                alt="Shoes"
-                className="rounded-xl h-44 w-48 border-5 border-red-500"
-              />
-            </figure>
+  const handleAddUser = e => {
+    e.preventDefault();
 
+    const form = e.target;
+    const food_name = form.food_name.value;
+
+    // const email = form.email.value;
+    const time = form.time.value;
+    const price = form.price.value;
+    const email = user.email;
+    const addAll = {
+      food_name,
+
+      price,
+      time,
+
+      email,
+    };
+    console.log(addAll);
+    fetch('http://localhost:5000/order', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(addAll),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data?.insertedId) {
+          Swal.fire({
+            title: 'Success!',
+            text: '  Added  Food Successfully',
+            icon: 'success',
+            confirmButtonText: 'Cool',
+          });
+          form.reset();
+        }
+      });
+  };
+  return (
+    <div className="">
+      <div className=" mb-5 mt-5 grid lg:grid-cols-2 items-center">
+        <div className="w-96 ">
+          <div className="card card-side bg-base-100 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">Food Name : {food_name}</h2>
               <p className="font-semibold">
@@ -43,21 +77,12 @@ const Purchase = () => {
         </div>
         {/* Order place */}
         <div>
-          <div className="gadgetContainer pt-10 ">
+          <div className="gadgetContainer pt-10 w-96 ">
             <div className="shadow-lg p-5 border rounded-lg bg-[#e0d5dcb0]">
               {/* Heading */}
-              <div className="mt-5 mb-8">
-                <p className="text-center text-3xl font-semibold">
-                  <span className="mr-3 text-[#496affce]">
-                    <i className="bx bxs-alarm-add"></i>
-                  </span>
-                  <span className="dark:text-white flex justify-center gap-2">
-                    Add Food Item
-                  </span>
-                </p>
-              </div>
+
               {/* form */}
-              <form>
+              <form onSubmit={handleAddUser}>
                 <div className="flex gap-8 ">
                   <div className="flex-1">
                     <label

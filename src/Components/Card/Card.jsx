@@ -18,9 +18,14 @@ const Card = ({ card }) => {
         <p className="font-bold">${price}</p>
         <p className="font-bold">{food_category}</p>
         <p className="font-bold">Quantity : {food_quantity}</p>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-center ">
           <Link to={`/Card/${_id}`}>
-            <button className="btn btn-outline btn-secondary">Detail</button>
+            <button className="btn btn-outline btn-secondary mr-3">
+              Detail
+            </button>
+          </Link>
+          <Link>
+            <button className="btn btn-outline btn-secondary">Purchase</button>
           </Link>
         </div>
       </div>

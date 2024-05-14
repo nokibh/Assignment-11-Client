@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
@@ -31,13 +31,40 @@ const Navbar = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-[#ac59d2] border border-[#22be0a4e] p-2 rounded'
+                    : 'font-bold'
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/allFoods">All Foods</Link>
+              <NavLink
+                to="/allFoods"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-[#ac59d2] border border-[#22be0a4e] p-2 rounded'
+                    : 'font-bold'
+                }
+              >
+                All Foods
+              </NavLink>
             </li>
             <li>
-              <Link to="/gallery">Gallery</Link>
+              <NavLink
+                to="/gallery"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-[#ac59d2] border border-[#22be0a4e] p-2 rounded'
+                    : 'font-bold'
+                }
+              >
+                Gallery
+              </NavLink>
             </li>
             <li className="h-full w-14 mr-2">
               <label className="swap swap-rotate">
