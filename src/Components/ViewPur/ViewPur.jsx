@@ -1,5 +1,6 @@
 const ViewPur = ({ card }) => {
-  const { price, food_name, time } = card;
+  const { price, _id, food_name, time } = card;
+
   return (
     <div>
       <div className="flex flex-col mt-6">
@@ -49,15 +50,15 @@ const ViewPur = ({ card }) => {
                 <tbody className="bg-white divide-y divide-gray-200 ">
                   <tr>
                     <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                      Build Dynamic Website
+                      {food_name}
                     </td>
 
                     <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                      10/04/2024
+                      {time}
                     </td>
 
                     <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                      $200
+                      {price}
                     </td>
 
                     <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">

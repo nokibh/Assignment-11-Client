@@ -1,9 +1,10 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UseHooks from '../Hook/UseHooks';
 
 const Purchase = () => {
   const cards = useLoaderData();
+  const navigate = useNavigate();
   const { id } = useParams();
   const card = cards.find(card => card._id === id);
   console.log(card);
@@ -53,6 +54,7 @@ const Purchase = () => {
             confirmButtonText: 'Cool',
           });
           form.reset();
+          navigate('/order');
         }
       });
   };

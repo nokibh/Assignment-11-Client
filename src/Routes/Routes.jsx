@@ -31,7 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/request',
-        element: <PurRequest></PurRequest>,
+        element: (
+          <PrivateRoute>
+            <PurRequest></PurRequest>
+          </PrivateRoute>
+        ),
       },
 
       {
@@ -87,7 +91,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/order',
-        element: <MyOrder></MyOrder>,
+        element: (
+          <PrivateRoute>
+            <MyOrder></MyOrder>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/gallery',
