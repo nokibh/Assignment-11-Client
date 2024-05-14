@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 const TopFood = ({ card }) => {
   const { _id, food_image, food_name, food_qun, price } = card;
+  console.log(card);
   return (
     <div>
       <div className="card w-80 bg-base-100 shadow-xl animate__animated animate__shakeX">
