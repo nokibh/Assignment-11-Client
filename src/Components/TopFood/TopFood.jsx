@@ -5,7 +5,7 @@ const TopFood = ({ card }) => {
   console.log(card);
   return (
     <div>
-      <div className="card w-80 bg-orange-50 shadow-xl animate__animated animate__shakeX">
+      <div className="card w-96 bg-orange-50 shadow-xl animate__animated animate__shakeX">
         <figure className="px-10 pt-10">
           <img
             src={food_image}
