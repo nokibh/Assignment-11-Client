@@ -1,4 +1,5 @@
 import Banner from '../Banner/Banner';
+import NewFood from '../NewFood';
 import TopFoods from '../TopFoods/TopFoods';
 
 const Home = () => {
@@ -9,6 +10,9 @@ const Home = () => {
       </div>
       <div className="mb-5 mt-5">
         <TopFoods></TopFoods>
+      </div>
+      <div className="mb-2 mt-6">
+        <NewFood></NewFood>
       </div>
     </div>
   );

@@ -8,7 +8,9 @@ const MyAddFood = () => {
   const [items, setItems] = useState([]);
   console.log(items);
   useEffect(() => {
-    fetch(`http://localhost:5000/myfood/${user?.email}`)
+    fetch(
+      `https://assignment-11-server-site-xi.vercel.app/myfood/${user?.email}`
+    )
       .then(res => res.json())
       .then(data => {
         setItems(data);
@@ -26,7 +28,7 @@ const MyAddFood = () => {
       confirmButtonText: 'Yes, delete it!',
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myfood/${id}`, {
+        fetch(`https://assignment-11-server-site-xi.vercel.app/myfood/${id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())

@@ -30,7 +30,7 @@ const AddFood = () => {
       food_image,
     };
     console.log(addAll);
-    fetch('http://localhost:5000/tops', {
+    fetch('https://assignment-11-server-site-xi.vercel.app/tops', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

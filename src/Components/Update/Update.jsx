@@ -40,7 +40,7 @@ const Update = () => {
       food_image,
     };
     console.log(addAll);
-    fetch(`http://localhost:5000/tops/${_id}`, {
+    fetch(`https://assignment-11-server-site-xi.vercel.app/tops/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

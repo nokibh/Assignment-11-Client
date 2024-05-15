@@ -36,7 +36,7 @@ const Purchase = () => {
       email,
     };
     console.log(addAll);
-    fetch('http://localhost:5000/order', {
+    fetch('https://assignment-11-server-site-xi.vercel.app/order', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

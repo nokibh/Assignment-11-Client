@@ -8,7 +8,9 @@ const PurRequest = () => {
 
   const { user } = UseHooks();
   useEffect(() => {
-    fetch(`http://localhost:5000/myorder/${user?.email}`)
+    fetch(
+      `https://assignment-11-server-site-xi.vercel.app/myorder/${user?.email}`
+    )
       .then(res => res.json())
       .then(data => {
         setItems(data);

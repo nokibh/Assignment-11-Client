@@ -54,7 +54,8 @@ const router = createBrowserRouter([
             <CardDetail></CardDetail>
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/foods'),
+        loader: () =>
+          fetch('https://assignment-11-server-site-xi.vercel.app/foods'),
       },
       {
         path: '/Top/:id',
@@ -64,7 +65,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
 
-        loader: () => fetch('http://localhost:5000/tops'),
+        loader: () =>
+          fetch('https://assignment-11-server-site-xi.vercel.app/tops'),
       },
       {
         path: 'addFood',
@@ -87,7 +89,9 @@ const router = createBrowserRouter([
         path: 'updateFood/:id',
         element: <Update></Update>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tops/${params.id}`),
+          fetch(
+            `https://assignment-11-server-site-xi.vercel.app/tops/${params.id}`
+          ),
       },
       {
         path: '/order',
@@ -100,7 +104,8 @@ const router = createBrowserRouter([
       {
         path: '/gallery',
         element: <Gallery></Gallery>,
-        loader: () => fetch('http://localhost:5000/foods'),
+        loader: () =>
+          fetch('https://assignment-11-server-site-xi.vercel.app/foods'),
       },
       {
         path: '/purchase/:id',
@@ -110,7 +115,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
 
-        loader: () => fetch('http://localhost:5000/tops'),
+        loader: () =>
+          fetch('https://assignment-11-server-site-xi.vercel.app/tops'),
       },
     ],
   },
