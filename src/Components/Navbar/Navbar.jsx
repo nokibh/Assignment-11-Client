@@ -1,11 +1,25 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/AuthProvider';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.querySelector('html').setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const handleChange = e => {
+    if (e.target.checked) {
+      setTheme('sunset');
+    } else {
+      setTheme('light');
+    }
+  };
+
   const handleLogOut = () => {
     Swal.fire({
       title: 'Are you sure you want to log out?',
@@ -16,23 +30,11 @@ const Navbar = () => {
       confirmButtonText: 'Yes, log me out!',
     }).then(result => {
       if (result.isConfirmed) {
-        // Proceed with logout if confirmed
         logOut();
       }
     });
   };
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-    const localTheme = localStorage.getItem('theme');
-    document.querySelector('html').setAttribute('data-theme', localTheme);
-  }, [theme]);
-  const handleChange = e => {
-    if (e.target.checked) {
-      setTheme('sunset');
-    } else {
-      setTheme('light');
-    }
-  };
+
   return (
     <div>
       <div className="navbar  shadow-2xl container px-4 mx-auto bg-orange-300 rounded-lg">
