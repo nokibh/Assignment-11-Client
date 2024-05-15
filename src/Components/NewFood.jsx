@@ -4,7 +4,7 @@ const NewFood = () => {
       <div className="text-black text-center font-extrabold text-2xl mb-2 rounded-2xl">
         Our new Foods
       </div>
-      <div className="relative w-full flex gap-4 py-6 overflow-x-auto">
+      <div className="relative w-full grid lg:grid-cols-4 gap-4 py-6 overflow-x-auto">
         <img
           className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500"
           src="https://i.ibb.co/0hVYHFv/pexels-horizon-content-2100060-3763847.jpg"
